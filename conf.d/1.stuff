@@ -1,0 +1,23 @@
+#!/bin/bash -ex
+
+HASTEDIR="/opt/haste-server"
+Install Node
+cd /tmp && wget -N http://nodejs.org/dist/node-latest.tar.gz
+cd /tmp && tar xzvf node-latest.tar.gz
+cd /tmp/node-v* && ./configure
+cd /tmp/node-v* && checkinstall
+cd /tmp/node-v* && dpkg -i node_*
+
+#haste-server
+git clone https://github.com/seejohnrun/haste-server.git $HASTEDIR
+
+#Install Haste Server
+cd $HASTEDIR && npm install
+
+#forever install glbl
+npm install -g forever
+
+(crontab -l; echo "@reboot cd $HASTEDIR && forever start server.js") | crontab
+
+sed -i 's|    \"host\": \"0.0.0.0\",|    \"host\":\"localhost\"|' $HASTEDIR/config.js
+
