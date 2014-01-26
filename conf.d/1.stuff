@@ -13,8 +13,11 @@ cd $HASTEDIR && npm install
 #forever install glbl
 npm install -g forever
 
-(crontab -l; echo "@reboot cd /opt/haste-server && forever start server.js") | crontab
+echo "forever start server.js" > $HASTEDIR/run.sh
+chmod +x $HASTEDIR/run.sh
 
+#(crontab -l ; echo "@reboot /opt/haste-server/run.sh") | crontab -
+echo "@reboot /opt/haste-server/run.sh" > /etc/cron.d/haste-server
 sed -i 's|    \"host\": \"0.0.0.0\",|    \"host\":\"localhost\",|' $HASTEDIR/config.js
 
 rm /etc/nginx/sites-enabled/default
