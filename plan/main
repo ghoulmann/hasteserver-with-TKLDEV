@@ -1,4 +1,4 @@
-#include <turnkey/gitlab>
+#include <turnkey/base>
 
 gzip
 git-core

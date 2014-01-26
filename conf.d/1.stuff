@@ -1,12 +1,8 @@
 #!/bin/bash -ex
 
 HASTEDIR="/opt/haste-server"
-Install Node
-cd /tmp && wget -N http://nodejs.org/dist/node-latest.tar.gz
-cd /tmp && tar xzvf node-latest.tar.gz
-cd /tmp/node-v* && ./configure
-cd /tmp/node-v* && checkinstall
-cd /tmp/node-v* && dpkg -i node_*
+#Install Node
+cd /tmp && dpkg -i node_*
 
 #haste-server
 git clone https://github.com/seejohnrun/haste-server.git $HASTEDIR
