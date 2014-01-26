@@ -17,3 +17,4 @@ npm install -g forever
 
 sed -i 's|    \"host\": \"0.0.0.0\",|    \"host\":\"localhost\",|' $HASTEDIR/config.js
 
+rm /etc/nginx/sites-enabled/default
