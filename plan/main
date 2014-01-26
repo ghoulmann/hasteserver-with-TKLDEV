@@ -1,5 +1,6 @@
 #include <turnkey/base>
 
+redis-server
 gzip
 git-core
 curl

@@ -13,7 +13,7 @@ cd $HASTEDIR && npm install
 #forever install glbl
 npm install -g forever
 
-(crontab -l; echo "@reboot cd $HASTEDIR && forever start server.js") | crontab
+(crontab -l; echo "@reboot cd /opt/haste-server && forever start server.js") | crontab
 
-sed -i 's|    \"host\": \"0.0.0.0\",|    \"host\":\"localhost\"|' $HASTEDIR/config.js
+sed -i 's|    \"host\": \"0.0.0.0\",|    \"host\":\"localhost\",|' $HASTEDIR/config.js
 
