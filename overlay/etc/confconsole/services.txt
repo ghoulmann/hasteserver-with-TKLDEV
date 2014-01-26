@@ -1,4 +1,4 @@
-Haste:     https://$ipaddr:9000
+Haste:     https://$ipaddr:7777
 Haste:     https://$ipaddr/
 Web shell: https://$ipaddr:12320
 Webmin:    https://$ipaddr:12321
