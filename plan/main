@@ -1,14 +1,5 @@
 #include <turnkey/base>
 
 redis-server
-gzip
 git-core
-curl
-python
-libssl-dev
-build-essential
-python-software-properties
-g++
-make
-checkinstall
 nginx
